@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling with JavaScript</title>
+    <style>
+        #box {
+            width: 100%;
+            height: 100px;
+            background-color: lightblue;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        
+        }
+        #hover-effect {
+            padding: 10px;
+            background-color: lightgreen;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .button-style {
+            padding: 10px 20px;
+            background-color: lightcoral;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" onclick="changeColor()" onmouseover="changeHoverColor()" 
+    onmouseout="changeBackColor()">Click or hover me to change color</div>
+    <div id="hover-effect" onmouseover="hoverEffect()" onmouseout="removeHoverEffect()">Hover over me</div>
+    <button class="button-style" onclick="buttonClick()">Click me</button>
+    <p id="text">This text will change color on button click.</p>
+
+    <script>
+        function changeColor() {
+            const box = document.getElementById('box');
+            box.style.backgroundColor = box.style.backgroundColor === 'lightblue' ? 'lightcoral' : 'lightblue';
+        }
+        function changeHoverColor() {
+            const box = document.getElementById('box');
+            box.style.backgroundColor = 'lightgreen';
+        }
+
+        function changeBackColor() {
+            const box = document.getElementById('box');
+            box.style.backgroundColor = 'lightblue';
+        }
+
+        function hoverEffect() {
+            const bar = document.getElementById('hover-effect');
+            bar.style.backgroundColor = 'lightcoral';
+        }
+
+        function removeHoverEffect() {
+            const bar = document.getElementById('hover-effect');
+            bar.style.backgroundColor = 'lightgreen';
+        }
+
+        function buttonClick() {
+            const text = document.getElementById('text');
+            text.style.color = text.style.color === 'black' ? 'red' : 'black';
+        }
+    </script>
+</body>
+</html>

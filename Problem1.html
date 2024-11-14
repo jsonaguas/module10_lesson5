@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics</title>
+</head>
+<body>
+    <div id="product-container"></div>
+    <script>
+        // Task 1: Create an array containing information about different products
+        let products = [
+            { name: "Laptop", price: 999.99, description: "Powerful computing on the go" },
+            { name: "Smartphone", price: 699.99, description: "Stay connected wherever you are" },
+            { name: "Headphones", price: 149.99, description: "Immersive audio experience" }
+        ];
+
+        // Task 2: Write a function to display the product information on the webpage dynamically
+        function displayProducts() {
+            const productContainer = document.getElementById('product-container');
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+
+                const productName = document.createElement('h2');
+                productName.textContent = product.name;
+                productDiv.appendChild(productName);
+
+                const productPrice = document.createElement('p');
+                productPrice.textContent = `Price: $${product.price}`;
+                productDiv.appendChild(productPrice);
+
+                const productDescription = document.createElement('p');
+                productDescription.textContent = product.description;
+                productDiv.appendChild(productDescription);
+
+                productContainer.appendChild(productDiv);
+            });
+        }
+
+        // Task 3: Implement an event listener to trigger the display of products when the page loads
+        window.addEventListener('load', displayProducts);
+    </script>
+
+</body>
+</html>
